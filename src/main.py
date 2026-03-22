@@ -5,6 +5,7 @@ from ui.main_window import MainWindow
 
 from utils.importer import smart_load_survey as load_survey_file
 
+from utils.exporter import generate_procurement_pdf
 from engine.calculator import MetalCalculator
 
 
@@ -44,9 +45,24 @@ class AppController:
         self.window.summary_label.setText(f"Total Weight: {total_w:.2f} kg")
         self.current_total_weight = total_w
     def handle_export(self):
-        save_path, _ = QFileDialog.getSaveFileName(None, "Save PDF", "", "PDF (*.pdf)")
-        if save_path:
-            pass
+    if not hasattr(self, 'last_results') or not self.last_results:
+        # Show a warning if they haven't calculated anything yet
+        return
+
+    save_path, _ = QFileDialog.getSaveFileName(
+        None, "Save Procurement Report", "data/output/report.pdf", "PDF Files (*.pdf)"
+    )
+    
+    if save_path:
+        try:
+            generate_procurement_pdf(
+                save_path, 
+                self.last_results, 
+                self.grand_total
+            )
+            print(f"Report saved to {save_path}")
+        except Exception as e:
+            print(f"Export failed: {e}")
     def perform_survey_analysis(self):
         # 1. Collect data from table into a list of dicts
         parts = []
