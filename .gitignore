@@ -1,0 +1,42 @@
+# --- Python & Virtual Environments ---
+venv/
+env/
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.project
+.pydevproject
+
+# --- OS Specific Junk ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Distribution & Build (PyInstaller) ---
+dist/
+build/
+*.spec
+
+# --- Data & Logs ---
+*.log
+# Ignore your generated PDFs but keep the folder structure
+data/output/*.pdf
+# Ignore temporary test files
+test_*.xlsx
+test_*.csv
+
+# --- Local Configurations ---
+# If you have local paths in your materials.json, you might want to ignore it 
+# and keep a materials.json.template instead.

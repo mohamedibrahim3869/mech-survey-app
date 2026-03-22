@@ -1,0 +1,22 @@
+{
+  "materials": {
+    "Mild Steel": {
+      "density_kg_m3": 7850,
+      "standard_sheets": [
+        {"name": "1x2", "width_mm": 1000, "length_mm": 2000},
+        {"name": "1x3", "width_mm": 1000, "length_mm": 3000},
+        {"name": "1.5x3", "width_mm": 1500, "length_mm": 3000},
+        {"name": "1.5x6", "width_mm": 1500, "length_mm": 6000}
+      ]
+    },
+    "Stainless_steel": {
+      "density_kg_m3": 8000,
+      "standard_sheets": [
+        {"name": "1x2", "width_mm": 1000, "length_mm": 2000},
+        {"name": "1x3", "width_mm": 1000, "length_mm": 3000},
+        {"name": "1.5x3", "width_mm": 1500, "length_mm": 3000},
+        {"name": "1.5x6", "width_mm": 1500, "length_mm": 6000}
+      ]
+    }
+  }
+}
