@@ -45,9 +45,9 @@ class AppController:
         self.window.summary_label.setText(f"Total Weight: {total_w:.2f} kg")
         self.current_total_weight = total_w
     def handle_export(self):
-    if not hasattr(self, 'last_results') or not self.last_results:
-        # Show a warning if they haven't calculated anything yet
-        return
+        if not hasattr(self, 'last_results') or not self.last_results:
+            # Show a warning if they haven't calculated anything yet
+            return
 
     save_path, _ = QFileDialog.getSaveFileName(
         None, "Save Procurement Report", "data/output/report.pdf", "PDF Files (*.pdf)"
